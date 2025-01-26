@@ -113,10 +113,13 @@
       <p>快来参与讨论吧~</p>
 
     </section>
-    <section class='body cmt-body artalk'>
+    <section class='body cmt-body giscus'>
       
 
-<div id="artalk_container"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+<svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" src="https://giscus.app/client.js" data-repo="DerekDongSir/blog-discussion" data-repo-id="R_kgDONvyQGg" data-category="Announcements" data-category-id="DIC_kwDONvyQGs4CmWxS" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous"></div>
+
     </section>
   </div>
 
@@ -449,26 +452,28 @@
 <!-- optional -->
 
   <script type="module">
-  const el = document.getElementById('artalk_container');
-  util.viewportLazyload(el, load_artalk, true);
+  const el = document.querySelector('#comments #giscus');
+  util.viewportLazyload(el, load_discus, true);
 
-  function load_artalk() {
+  function load_discus() {
     if (!el) return;
-    utils.css('https://unpkg.com/artalk@2.7/dist/Artalk.css');
-    utils.js('https://unpkg.com/artalk@2.7/dist/Artalk.js', {defer: true}).then(function () {
-      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
-      const artalk = Artalk.init({
-        el: '#artalk_container',
-        pageKey: path,
-        pageTitle: 'Sug',
-        server: '',
-        placeholder: '',
-        site: "董洪伟的博客",
-        darkMode: 'auto'
-      });
-    });
+    try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.error(error);
+      }
+      const script = document.createElement('script');
+      script.async = true;
+      for (const key of Object.keys(el.attributes)) {
+        const attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
   }
 </script>
+
 
 
 
