@@ -4,7 +4,7 @@
 <head><!-- hexo injector head_begin start --><script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script><!-- hexo injector head_begin end -->
   <meta charset="utf-8">
   <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1" theme-name="Stellar" theme-version="1.29.1">
-  <meta name="robots" content="noindex,follow">
+  
   <meta name="generator" content="Hexo 7.3.0">
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   
@@ -17,16 +17,18 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
   
-  <title>归档 - 董洪伟的博客</title>
+  <title>董洪伟的博客</title>
 
   
-    <meta name="description" content="阅读-思考-实践-改变">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="http://blog.derekdong.com/archives/index.html">
+    <meta name="description" content="Redis与数据库的双写一致性是分布式系统中常见的挑战，核心目标是在缓存（Redis）和数据库之间维持数据的一致性。以下是常见的解决方案及其实现逻辑：  1. 缓存更新策略1.1 Cache-Aside（旁路缓存） 核心逻辑：由应用层管理缓存和数据库的读写。  读操作： 先读缓存，命中则返回； 未命中则读数据库，回填缓存。   写操作： 先更新数据库； 再删除缓存（而非更新，避免并发写导致脏数据）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="董洪伟的博客">
+<meta property="og:url" content="http://blog.derekdong.com/2025/02/13/redis%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%8F%8C%E5%86%99%E4%B8%80%E8%87%B4%E6%80%A7%E6%96%B9%E6%A1%88/index.html">
 <meta property="og:site_name" content="董洪伟的博客">
-<meta property="og:description" content="阅读-思考-实践-改变">
+<meta property="og:description" content="Redis与数据库的双写一致性是分布式系统中常见的挑战，核心目标是在缓存（Redis）和数据库之间维持数据的一致性。以下是常见的解决方案及其实现逻辑：  1. 缓存更新策略1.1 Cache-Aside（旁路缓存） 核心逻辑：由应用层管理缓存和数据库的读写。  读操作： 先读缓存，命中则返回； 未命中则读数据库，回填缓存。   写操作： 先更新数据库； 再删除缓存（而非更新，避免并发写导致脏数据）">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-02-13T08:55:35.470Z">
+<meta property="article:modified_time" content="2025-02-13T09:01:26.029Z">
 <meta property="article:author" content="董洪伟">
 <meta property="article:tag" content="Golang, Python, 阅读">
 <meta name="twitter:card" content="summary">
@@ -50,7 +52,7 @@
 </head>
 <body>
 
-<div class="l_body s:aa index tech" id="start" layout="undefined" ><aside class="l_left"><div class="leftbar-container">
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
 
 
 <header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://medical-kg.su.bcebos.com/business-platform/files/20250126/3644da38169266b2834bf0db5.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">董洪伟的博客</div><div class="sub normal cap">阅读</div><div class="sub hover cap" style="opacity:0"> 思考 | 实践 | 改变</div></a></div></header>
@@ -62,21 +64,240 @@
 <nav class="menu dis-select"></nav>
 </div>
 <div class="widgets">
+
+
 <widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/01/26/sug/"><span class="title">Sug</span></a><a class="item title" href="/2025/01/26/hello-world/"><span class="title">Hello World</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
 
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://medical-kg.su.bcebos.com/business-platform/files/20250126/3644da38169266b2834bf0db5.jpeg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">董洪伟的博客</div><div class="sub normal cap">阅读</div><div class="sub hover cap" style="opacity:0"> 思考 | 实践 | 改变</div></a></div></header>
-
- 
 
 
-<div class="navbar top"><nav class="post"><a href="/">近期发布</a><a class="active" href="/archives">归档</a></nav></div><div class="post-list archives"><article class="" id="archive"><div class='archive-header h4'>2025</div><div class="archive-list"><a class='post fs14' href="/2025/02/13/redis%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%8F%8C%E5%86%99%E4%B8%80%E8%87%B4%E6%80%A7%E6%96%B9%E6%A1%88/"><time>02-13</time><span>2025-02-13</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/02/12/go%E5%AE%B9%E6%98%93%E8%B8%A9%E7%9A%84%E5%9D%91/"><time>02-12</time><span>2025-02-12</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/02/11/playwright/"><time>02-11</time><span>2025-02-11</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/02/09/Go%E8%AF%AD%E8%A8%80%E5%8D%81%E4%B8%AA%E6%8A%80%E5%B7%A7/"><time>02-09</time><span>2025-02-09</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/02/08/tts/"><time>02-08</time><span>2025-02-08</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/02/06/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/"><time>02-06</time><span>2025-02-06</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/01/26/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"><time>01-26</time><span>2025-01-26</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/01/26/sug/"><time>01-26</time><span>Sug</span></a></div><div class="archive-list"><a class='post fs14' href="/2025/01/26/hello-world/"><time>01-26</time><span>Hello World</span></a></div></article></div>
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-02-13T08:55:35.470Z">2025-02-13</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-02-13T09:01:26.029Z">2025-02-13</time></span></div></div></div>
+    
+  </div>
+  </div><article class="md-text content"><p>Redis与数据库的双写一致性是分布式系统中常见的挑战，核心目标是在缓存（Redis）和数据库之间维持数据的一致性。以下是常见的解决方案及其实现逻辑：</p>
+<hr>
+<h3 id="1-缓存更新策略"><a href="#1-缓存更新策略" class="headerlink" title="1. 缓存更新策略"></a><strong>1. 缓存更新策略</strong></h3><h4 id="1-1-Cache-Aside（旁路缓存）"><a href="#1-1-Cache-Aside（旁路缓存）" class="headerlink" title="1.1 Cache-Aside（旁路缓存）"></a><strong>1.1 Cache-Aside（旁路缓存）</strong></h4><ul>
+<li><p><strong>核心逻辑</strong>：由应用层管理缓存和数据库的读写。</p>
+<ul>
+<li><strong>读操作</strong>：<ol>
+<li>先读缓存，命中则返回；</li>
+<li>未命中则读数据库，回填缓存。</li>
+</ol>
+</li>
+<li><strong>写操作</strong>：<ol>
+<li>先更新数据库；</li>
+<li>再删除缓存（而非更新，避免并发写导致脏数据）。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><strong>优点</strong>：简单、通用，适用于读多写少场景。</p>
+</li>
+<li><p><strong>缺点</strong>：</p>
+<ul>
+<li>短暂不一致：若数据库更新后、缓存删除前有读请求，会读到旧数据。</li>
+<li>需处理缓存删除失败（需重试或异步补偿）。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="1-2-Write-Through（直写）"><a href="#1-2-Write-Through（直写）" class="headerlink" title="1.2 Write-Through（直写）"></a><strong>1.2 Write-Through（直写）</strong></h4><ul>
+<li><p><strong>核心逻辑</strong>：所有写操作同时更新数据库和缓存。</p>
+<ul>
+<li><strong>写操作</strong>：<ol>
+<li>先更新缓存；</li>
+<li>同步更新数据库。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><strong>优点</strong>：强一致性。</p>
+</li>
+<li><p><strong>缺点</strong>：</p>
+<ul>
+<li>写入性能低（需同时写缓存和数据库）；</li>
+<li>不适用于写多场景。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-双删策略"><a href="#2-双删策略" class="headerlink" title="2. 双删策略"></a><strong>2. 双删策略</strong></h3><h4 id="延迟双删"><a href="#延迟双删" class="headerlink" title="延迟双删"></a><strong>延迟双删</strong></h4><ul>
+<li><p><strong>核心逻辑</strong>：</p>
+<ol>
+<li>先删除缓存；</li>
+<li>更新数据库；</li>
+<li>延迟一段时间后再次删除缓存（确保主从同步完成后的旧数据清理）。</li>
+</ol>
+</li>
+<li><p><strong>适用场景</strong>：数据库主从架构，存在同步延迟。</p>
+</li>
+<li><p><strong>关键参数</strong>：延迟时间需大于主从同步时间（如500ms）。</p>
+</li>
+<li><p><strong>缺点</strong>：依赖延迟时间的准确性。</p>
+</li>
+</ul>
+<hr>
+<h3 id="3-异步补偿"><a href="#3-异步补偿" class="headerlink" title="3. 异步补偿"></a><strong>3. 异步补偿</strong></h3><h4 id="3-1-基于消息队列"><a href="#3-1-基于消息队列" class="headerlink" title="3.1 基于消息队列"></a><strong>3.1 基于消息队列</strong></h4><ul>
+<li><p><strong>核心逻辑</strong>：</p>
+<ol>
+<li>更新数据库；</li>
+<li>发送消息到MQ，异步删除缓存；</li>
+<li>消费端重试失败任务。</li>
+</ol>
+</li>
+<li><p><strong>优点</strong>：解耦、保证最终一致性。</p>
+</li>
+<li><p><strong>缺点</strong>：系统复杂度增加，需维护MQ。</p>
+</li>
+</ul>
+<hr>
+<h4 id="3-2-基于数据库Binlog（如Canal）"><a href="#3-2-基于数据库Binlog（如Canal）" class="headerlink" title="3.2 基于数据库Binlog（如Canal）"></a><strong>3.2 基于数据库Binlog（如Canal）</strong></h4><ul>
+<li><p><strong>核心逻辑</strong>：</p>
+<ol>
+<li>数据库更新后，通过Binlog（如MySQL）捕获变更；</li>
+<li>通过中间件（如Canal）解析Binlog；</li>
+<li>异步更新或删除缓存。</li>
+</ol>
+</li>
+<li><p><strong>优点</strong>：无侵入性，保证最终一致性。</p>
+</li>
+<li><p><strong>缺点</strong>：依赖数据库日志同步机制，延迟可能较高。</p>
+</li>
+</ul>
+<hr>
+<h3 id="4-强一致性方案"><a href="#4-强一致性方案" class="headerlink" title="4. 强一致性方案"></a><strong>4. 强一致性方案</strong></h3><h4 id="4-1-分布式锁"><a href="#4-1-分布式锁" class="headerlink" title="4.1 分布式锁"></a><strong>4.1 分布式锁</strong></h4><ul>
+<li><p><strong>核心逻辑</strong>：</p>
+<ol>
+<li>写操作前获取分布式锁；</li>
+<li>更新数据库后删除缓存；</li>
+<li>读操作若缓存未命中，需先获取锁再查数据库。</li>
+</ol>
+</li>
+<li><p><strong>优点</strong>：强一致性。</p>
+</li>
+<li><p><strong>缺点</strong>：性能低，复杂度高。</p>
+</li>
+</ul>
+<hr>
+<h4 id="4-2-版本号-时间戳"><a href="#4-2-版本号-时间戳" class="headerlink" title="4.2 版本号&#x2F;时间戳"></a><strong>4.2 版本号&#x2F;时间戳</strong></h4><ul>
+<li><p><strong>核心逻辑</strong>：</p>
+<ol>
+<li>数据写入时附带版本号；</li>
+<li>更新时校验版本号，防止旧数据覆盖；</li>
+<li>缓存中存储版本号，读请求需校验。</li>
+</ol>
+</li>
+<li><p><strong>适用场景</strong>：对一致性要求极高的场景（如库存扣减）。</p>
+</li>
+<li><p><strong>缺点</strong>：实现复杂，需维护版本号。</p>
+</li>
+</ul>
+<hr>
+<h3 id="5-方案对比与选择"><a href="#5-方案对比与选择" class="headerlink" title="5. 方案对比与选择"></a><strong>5. 方案对比与选择</strong></h3><table>
+<thead>
+<tr>
+<th>方案</th>
+<th>一致性级别</th>
+<th>性能</th>
+<th>复杂度</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Cache-Aside</td>
+<td>最终一致</td>
+<td>高</td>
+<td>低</td>
+<td>读多写少</td>
+</tr>
+<tr>
+<td>延迟双删</td>
+<td>最终一致</td>
+<td>中</td>
+<td>中</td>
+<td>主从同步延迟场景</td>
+</tr>
+<tr>
+<td>异步补偿（MQ&#x2F;Binlog）</td>
+<td>最终一致</td>
+<td>中</td>
+<td>高</td>
+<td>高并发、最终一致场景</td>
+</tr>
+<tr>
+<td>分布式锁</td>
+<td>强一致</td>
+<td>低</td>
+<td>高</td>
+<td>对一致性要求极高的场景</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="6-最佳实践"><a href="#6-最佳实践" class="headerlink" title="6. 最佳实践"></a><strong>6. 最佳实践</strong></h3><ol>
+<li><strong>优先最终一致性</strong>：大多数场景不需要强一致，可通过异步补偿或延迟双删实现。</li>
+<li><strong>监控与告警</strong>：监控缓存与数据库不一致的时长，设置阈值告警。</li>
+<li><strong>兜底策略</strong>：<ul>
+<li>缓存设置合理的TTL，避免长期不一致；</li>
+<li>关键数据（如库存）采用强一致性方案。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>选择方案需权衡业务场景（一致性要求、读写比例）、系统复杂度及性能。例如：</p>
+<ul>
+<li><strong>电商商品详情页</strong>：Cache-Aside + 异步补偿；</li>
+<li><strong>金融交易系统</strong>：分布式锁 + 版本号。</li>
+</ul>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/02/12/go%E5%AE%B9%E6%98%93%E8%B8%A9%E7%9A%84%E5%9D%91/">2025-02-12</a></div></section></div>
+
+
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" src="https://giscus.app/client.js" data-repo="DerekDongSir/blog-discussion" data-repo-id="R_kgDONvyQGg" data-category="Announcements" data-category-id="DIC_kwDONvyQGs4CmWxS" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="zh-CN" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
+
+
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">董洪伟</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel blur'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%BC%93%E5%AD%98%E6%9B%B4%E6%96%B0%E7%AD%96%E7%95%A5"><span class="toc-text">1. 缓存更新策略</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-Cache-Aside%EF%BC%88%E6%97%81%E8%B7%AF%E7%BC%93%E5%AD%98%EF%BC%89"><span class="toc-text">1.1 Cache-Aside（旁路缓存）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-Write-Through%EF%BC%88%E7%9B%B4%E5%86%99%EF%BC%89"><span class="toc-text">1.2 Write-Through（直写）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%8C%E5%88%A0%E7%AD%96%E7%95%A5"><span class="toc-text">2. 双删策略</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%B6%E8%BF%9F%E5%8F%8C%E5%88%A0"><span class="toc-text">延迟双删</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BC%82%E6%AD%A5%E8%A1%A5%E5%81%BF"><span class="toc-text">3. 异步补偿</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%9F%BA%E4%BA%8E%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="toc-text">3.1 基于消息队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%9F%BA%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93Binlog%EF%BC%88%E5%A6%82Canal%EF%BC%89"><span class="toc-text">3.2 基于数据库Binlog（如Canal）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%BC%BA%E4%B8%80%E8%87%B4%E6%80%A7%E6%96%B9%E6%A1%88"><span class="toc-text">4. 强一致性方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81"><span class="toc-text">4.1 分布式锁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E7%89%88%E6%9C%AC%E5%8F%B7-%E6%97%B6%E9%97%B4%E6%88%B3"><span class="toc-text">4.2 版本号&#x2F;时间戳</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94%E4%B8%8E%E9%80%89%E6%8B%A9"><span class="toc-text">5. 方案对比与选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="toc-text">6. 最佳实践</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
@@ -398,6 +619,30 @@
 
 
 <!-- optional -->
+
+  <script type="module">
+  const el = document.querySelector('#comments #giscus');
+  util.viewportLazyload(el, load_discus, true);
+
+  function load_discus() {
+    if (!el) return;
+    try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.error(error);
+      }
+      const script = document.createElement('script');
+      script.async = true;
+      for (const key of Object.keys(el.attributes)) {
+        const attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+  }
+</script>
+
 
 
 
